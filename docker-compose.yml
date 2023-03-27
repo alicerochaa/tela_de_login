@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  curso-php:
+    restart: always
+    container_name: cursoPHP
+    build: ./
+    ports:
+      - 84:80
+    volumes:
+      - ./app:/home/app
+    networks:
+      - app_network
+networks:
+  app_network:
+    driver: bridge
